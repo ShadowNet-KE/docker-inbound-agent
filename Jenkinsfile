@@ -20,9 +20,9 @@ pipeline {
                     options {
                         timeout(time: 60, unit: 'MINUTES')
                     }
-                    environment {
-                        DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'buluma' : 'buluma4eval'}"
-                    }
+//                     environment {
+//                         DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'buluma' : 'buluma4eval'}"
+//                     }
                     steps {
                         powershell '& ./make.ps1 test'
                         script {
@@ -57,9 +57,9 @@ pipeline {
                     options {
                         timeout(time: 30, unit: 'MINUTES')
                     }
-                    environment {
-                        JENKINS_REPO = "${infra.isTrusted() ? 'ShadowNet-KE' : 'ShadowNet-KE4eval'}/inbound-agent"
-                    }
+//                     environment {
+//                         JENKINS_REPO = "${infra.isTrusted() ? 'ShadowNet-KE' : 'ShadowNet-KE4eval'}/inbound-agent"
+//                     }
                     steps {
                         script {
                             def branchName = "${env.BRANCH_NAME}"
