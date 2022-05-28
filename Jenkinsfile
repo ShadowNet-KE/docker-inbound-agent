@@ -15,7 +15,7 @@ pipeline {
             parallel {
                 stage('Windows') {
                     agent {
-                        label 'jenkins-agent'
+                        label 'windows'
                     }
                     options {
                         timeout(time: 60, unit: 'MINUTES')
