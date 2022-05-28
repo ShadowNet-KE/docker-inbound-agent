@@ -21,7 +21,7 @@ pipeline {
                         timeout(time: 60, unit: 'MINUTES')
                     }
                     environment {
-                        DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}"
+                        DOCKERHUB_ORGANISATION = "${infra.isTrusted() ? 'buluma' : 'buluma4eval'}"
                     }
                     steps {
                         powershell '& ./make.ps1 test'
@@ -58,7 +58,7 @@ pipeline {
                         timeout(time: 30, unit: 'MINUTES')
                     }
                     environment {
-                        JENKINS_REPO = "${infra.isTrusted() ? 'jenkins' : 'jenkins4eval'}/inbound-agent"
+                        JENKINS_REPO = "${infra.isTrusted() ? 'ShadowNet-KE' : 'ShadowNet-KE4eval'}/inbound-agent"
                     }
                     steps {
                         script {
